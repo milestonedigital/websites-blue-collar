@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "dist/public",
+  "buildCommand": "cd client && npx vite build",
+  "outputDirectory": "client/dist/public",
+  "installCommand": "cd client && pnpm install",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
