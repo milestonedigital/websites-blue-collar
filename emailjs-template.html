@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New Lead — Websites Blue Collar</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #1a2a3a;
+    }
+    .wrapper {
+      max-width: 620px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #0D1B2A 0%, #1E3A5F 100%);
+      padding: 36px 40px 28px;
+      text-align: center;
+      border-bottom: 3px solid #2563EB;
+    }
+    .header .logo-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .header .logo-text span {
+      color: #06B6D4;
+    }
+    .header .badge {
+      display: inline-block;
+      margin-top: 12px;
+      background: #2563EB;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── Alert Banner ── */
+    .alert-banner {
+      background: #EFF6FF;
+      border-left: 4px solid #2563EB;
+      padding: 16px 40px;
+      font-size: 14px;
+      color: #1E40AF;
+      font-weight: 600;
+    }
+    .alert-banner span {
+      font-size: 18px;
+      margin-right: 6px;
+    }
+
+    /* ── Body ── */
+    .body {
+      padding: 36px 40px;
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #06B6D4;
+      margin-bottom: 16px;
+    }
+
+    /* ── Field Cards ── */
+    .field-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .field-card .field-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #94A3B8;
+      margin-bottom: 6px;
+    }
+    .field-card .field-value {
+      font-size: 15px;
+      font-weight: 600;
+      color: #0F172A;
+      line-height: 1.5;
+    }
+    .field-card .field-value.message {
+      font-weight: 400;
+      color: #334155;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+    .field-card.highlight {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+    }
+    .field-card.highlight .field-value {
+      color: #1E40AF;
+    }
+    .field-card.phone-card {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+    }
+    .field-card.phone-card .field-value {
+      color: #166534;
+    }
+
+    /* ── Two-column grid ── */
+    .two-col {
+      display: table;
+      width: 100%;
+      border-spacing: 0 0;
+      margin-bottom: 12px;
+    }
+    .two-col .col {
+      display: table-cell;
+      width: 50%;
+      vertical-align: top;
+    }
+    .two-col .col:first-child {
+      padding-right: 6px;
+    }
+    .two-col .col:last-child {
+      padding-left: 6px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: #E2E8F0;
+      margin: 28px 0;
+    }
+
+    /* ── CTA Buttons ── */
+    .cta-wrap {
+      text-align: center;
+      margin: 28px 0 8px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2563EB, #06B6D4);
+      color: #ffffff !important;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      margin: 0 6px;
+    }
+    .cta-btn.green {
+      background: linear-gradient(135deg, #059669, #10B981);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0D1B2A;
+      padding: 24px 40px;
+      text-align: center;
+    }
+    .footer p {
+      color: #475569;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+    .footer a {
+      color: #06B6D4;
+      text-decoration: none;
+    }
+    .footer .footer-logo {
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .footer .footer-logo span {
+      color: #06B6D4;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-text">Websites <span>Blue Collar</span></div>
+      <div class="badge">🔔 New Lead Received</div>
+    </div>
+
+    <!-- Alert Banner -->
+    <div class="alert-banner">
+      <span>⚡</span> A new project inquiry just came in — respond within 24 hours!
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <div class="section-title">Lead Information</div>
+
+      <!-- Name + Email (two columns) -->
+      <div class="two-col">
+        <div class="col">
+          <div class="field-card highlight">
+            <div class="field-label">Full Name</div>
+            <div class="field-value">{{from_name}}</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="field-card highlight">
+            <div class="field-label">Email Address</div>
+            <div class="field-value">{{from_email}}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone + Business (two columns) -->
+      <div class="two-col">
+        <div class="col">
+          <div class="field-card phone-card">
+            <div class="field-label">📞 Phone Number</div>
+            <div class="field-value">{{phone_number}}</div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="field-card">
+            <div class="field-label">Business Name</div>
+            <div class="field-value">{{business_name}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-title">Project Details</div>
+
+      <!-- Message -->
+      <div class="field-card">
+        <div class="field-label">Message / Project Description</div>
+        <div class="field-value message">{{message}}</div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="cta-wrap">
+        <a href="mailto:{{from_email}}" class="cta-btn">✉️ Reply by Email</a>
+        <a href="tel:{{phone_number}}" class="cta-btn green">📞 Call Client</a>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-logo">Websites <span>Blue Collar</span></div>
+      <p>
+        This email was sent automatically from your website contact form.<br/>
+        <a href="mailto:joshwebsitesbluecollar@gmail.com">joshwebsitesbluecollar@gmail.com</a> &nbsp;|&nbsp;
+        <a href="https://www.websitesbluecollar.com">websitesbluecollar.com</a>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+/* 
+  DESIGN PHILOSOPHY: Bold Modernism — Dark Agency Aesthetic
+  - Deep dark navy background that makes project screenshots pop
+  - Bright blue accent (#2563EB) for CTAs and highlights
+  - Electric cyan (#06B6D4) for secondary accents
+  - Typography: Syne (display) + Nunito Sans (body) + Space Grotesk (labels)
+  - Smooth scroll animations, hover effects, count-up stats
+*/
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Nunito Sans', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  /* Dark Agency Theme */
+  --background: oklch(0.12 0.02 240);
+  --foreground: oklch(0.95 0.005 240);
+  --card: oklch(0.16 0.025 240);
+  --card-foreground: oklch(0.95 0.005 240);
+  --popover: oklch(0.16 0.025 240);
+  --popover-foreground: oklch(0.95 0.005 240);
+  --primary: oklch(0.55 0.22 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.20 0.025 240);
+  --secondary-foreground: oklch(0.85 0.01 240);
+  --muted: oklch(0.22 0.02 240);
+  --muted-foreground: oklch(0.65 0.015 240);
+  --accent: oklch(0.65 0.18 195);
+  --accent-foreground: oklch(0.12 0.02 240);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.28 0.025 240);
+  --input: oklch(0.22 0.02 240);
+  --ring: oklch(0.55 0.22 260);
+  --sidebar: oklch(0.14 0.02 240);
+  --sidebar-foreground: oklch(0.95 0.005 240);
+  --sidebar-border: oklch(0.28 0.025 240);
+  --sidebar-ring: oklch(0.55 0.22 260);
+  --sidebar-primary: oklch(0.55 0.22 260);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.20 0.025 240);
+  --sidebar-accent-foreground: oklch(0.85 0.01 240);
+
+  /* Custom agency colors */
+  --agency-blue: #2563EB;
+  --agency-cyan: #06B6D4;
+  --agency-navy: #0D1B2A;
+  --agency-card: #162032;
+  --agency-border: #1E3A5F;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    zoom: 0.9;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  a[href],
+  select:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* Agency-specific utility classes */
+  .font-display {
+    font-family: 'Syne', sans-serif;
+  }
+
+  .font-mono-label {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .agency-gradient {
+    background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+  }
+
+  .agency-glow {
+    box-shadow: 0 0 30px rgba(37, 99, 235, 0.3), 0 0 60px rgba(37, 99, 235, 0.1);
+  }
+
+  .agency-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .agency-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2), 0 0 0 1px rgba(37, 99, 235, 0.3);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .stagger-children.visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+  .stagger-children.visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+  .stagger-children.visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+  .stagger-children.visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+  .stagger-children.visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+  .stagger-children.visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+  .stagger-children.visible > *:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+  .stagger-children.visible > *:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+  .stagger-children.visible > *:nth-child(9) { opacity: 1; transform: translateY(0); transition-delay: 0.45s; }
+  .stagger-children.visible > *:nth-child(n+10) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+}
